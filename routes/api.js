@@ -22,4 +22,16 @@ api.post('/notes', (req, res) => {
     (err ? console.error(err) : console.log(`A new note has been added.`)))
 });
 
+api.delete('notes/:id', (req, res) => {
+    const noteId = req.params.id;
+    fs.readFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+        const result = json.filter((notes) => notes.id !== noteId);
+
+        fs.writeFile('./db/db.json', result);
+        res.json(`Note ${noteId} deleted`)
+    });
+});
+
 module.exports = api;
