@@ -1,12 +1,15 @@
+// requires
 const api = require('express').Router();
 const fs = require('fs');
 let notes = require('../db/db.json');
 const { v4: uuidv4 } = require('uuid');
 
+// route for '/notes' endpoint
 api.get('/notes', (req, res) => {
     res.json(notes);
 });
 
+// creates and logs notes
 api.post('/notes', (req, res) => {
     const newNote = {
         title: req.body.title,
@@ -22,6 +25,7 @@ api.post('/notes', (req, res) => {
     (err ? console.error(err) : console.log(`A new note has been added.`)))
 });
 
+// delete note by unique id
 api.delete('notes/:id', (req, res) => {
     const noteId = req.params.id;
     fs.readFile('./db/db.json')
@@ -34,4 +38,5 @@ api.delete('notes/:id', (req, res) => {
     });
 });
 
+// exports router to be used in server.js
 module.exports = api;
