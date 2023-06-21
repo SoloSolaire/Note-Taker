@@ -25,6 +25,7 @@ api.post('/notes', (req, res) => {
     (err ? console.error(err) : console.log(`A new note has been added.`)))
 });
 
+// ***BONUS***
 // delete note by unique id
 api.delete('notes/:id', (req, res) => {
     const noteId = req.params.id;
