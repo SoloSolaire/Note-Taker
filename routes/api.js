@@ -4,7 +4,7 @@ const fs = require('fs');
 let notes = require('../db/db.json');
 const { v4: uuidv4 } = require('uuid');
 
-// route for '/notes' endpoint
+// route for '/notes' endpoint and notes
 api.get('/notes', (req, res) => {
     res.json(notes);
 });
