@@ -11,4 +11,4 @@ To install and initialize the code for yourself, clone this repo first. Then wit
 ![Saving-Note](./public/assets/screenshots/nt-ss2.png)
 
 ## Deployed App
-[Click this to go to the Deployed App](https://secret-shore-27483-e634c1ce7ece.herokuapp.com/notes)
+[Click this to go to the Deployed App](https://secret-shore-27483-e634c1ce7ece.herokuapp.com)
